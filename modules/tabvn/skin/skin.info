@@ -1,0 +1,4 @@
+name = skin generate
+description = generate css skin file
+core = 7.x
+package = Tabvn

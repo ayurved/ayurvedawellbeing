@@ -1,0 +1,15 @@
+name = custom_blog_setting
+description = Custom setting for blog content type
+core = 7.x
+package = Tabvn
+dependencies[] = blog
+dependencies[] = features
+dependencies[] = image
+dependencies[] = taxonomy
+features[features_api][] = api:1
+features[field][] = comment-comment_node_blog-comment_body
+features[field][] = node-blog-field_category
+features[field][] = node-blog-field_image
+features[field][] = node-blog-field_tags
+features[taxonomy][] = blog_categories
+features[taxonomy][] = tags

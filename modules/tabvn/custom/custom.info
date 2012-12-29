@@ -1,0 +1,4 @@
+name = Custom
+description = Providing customization for the site.
+core = 7.x
+package = Tabvn

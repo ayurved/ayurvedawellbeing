@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * Implementation of hook_init()
+ */
+function demo_init() {
+
+    global $conf;
+
+    $theme = 'perspective';
+    $allow_name_arr = array('blog_display_setting', 'perspective_homepage_type');
+    if (!empty($_GET['theme_setting_name']) && !empty($_GET['theme_setting_value'])) {
+
+        $setting_name = $_GET['theme_setting_name'];
+        $setting_value = $_GET['theme_setting_value'];
+
+        if (in_array($setting_name, $allow_name_arr)) {
+            $default_theme_variable = variable_get('theme_' . $theme . '_settings', array());
+
+            if (isset($default_theme_variable[$setting_name])) {
+                $default_theme_variable[$setting_name] = $setting_value;
+                //variable_set('theme_' . $theme . '_settings', $default_theme_variable);
+
+                $conf['theme_' . $theme . '_settings'] = $default_theme_variable;
+            }
+        }
+    }
+}
+

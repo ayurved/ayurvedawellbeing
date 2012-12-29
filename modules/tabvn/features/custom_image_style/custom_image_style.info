@@ -1,0 +1,13 @@
+name = custom_image_style
+description = Add custom image style
+core = 7.x
+package = Tabvn
+version = 7.x-1.0
+project = custom_image_style
+dependencies[] = image
+features[features_api][] = api:1
+features[image][] = blog_teaser
+features[image][] = portfolio_300_200
+features[image][] = portfolio_460_300
+features[image][] = portfolio_940_400
+features[image][] = related_post

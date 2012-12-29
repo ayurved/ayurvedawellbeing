@@ -1,0 +1,95 @@
+name = Perspective
+description = Perspective theme, developed by <a href="http://tabvn.com/">Tabvn</a>.
+core = 7.x
+
+
+scripts[] = js/jquery.preloadify.js
+scripts[] = js/scripts-top.js
+scripts[] = js/iview.pack.js
+scripts[] = js/raphael-min.js
+scripts[] = js/jquery.plugins.js
+scripts[] = js/smk-framework.js
+scripts[] = js/scripts-bottom.js
+
+
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[highlighted] = Highlighted
+regions[featured] = Featured
+
+regions[content] = Content
+regions[sidebar_first] = Sidebar first
+regions[sidebar_second] = Sidebar second
+
+regions[footer_firstcolumn] = Footer first column
+regions[footer_secondcolumn] = Footer second column
+regions[footer_thirdcolumn] = Footer third column
+regions[footer_fourthcolumn] = Footer fourth column
+regions[footer] = Footer
+
+
+
+features[] = logo
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = comment_user_verification
+features[] = favicon
+features[] = main_menu
+
+settings[blog_display_setting] = blog_meta_before
+
+settings[default_portfolio] = 4c
+settings[default_nodes_portfolio] = 12
+
+settings[default_skin] = 40
+
+settings[contact_map] = <iframe height="350" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=52.093983,4.301984&amp;sll=37.0625,-95.677068&amp;sspn=59.769082,135.263672&amp;ie=UTF8&amp;t=m&amp;z=14&amp;ll=52.093983,4.301984&amp;output=embed"></iframe>
+
+settings[perspective_sidebar_first_size] = 4
+settings[perspective_sidebar_second_size] = 4
+
+settings[perspective_homepage_type] = slider
+settings[perspective_video_title] = Build Anything
+settings[perspective_video_link_title] = More details
+settings[perspective_video_link_url] = http://tabvn.com/
+settings[perspective_video_description] = Africus hortamento laetus moritur ad suis Tyrium coniugem in deinde cepit roseo commendavit auri Neptunus spatia tribulatione. Habes qui a his auditorio iubet per dicis eo Apollonius eius sed dominum sit audivit emere sibi adsedit. Se in lucem concitaverunt in lucem concitaverunt in. Eam eos cui ubi ait in. Recedite fit proponebat vidit ad quia ei.
+settings[perspective_video] = <iframe src="http://player.vimeo.com/video/12513670?portrait=0" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+
+settings[perspective_theme_slogan] = Hey! Do you like this template? This is extremely easy to use.<br /> You don't need a software, like Photoshop, to edit this template, because it is based on CSS3.
+settings[perspective_footer_copyright] = <a href="http://www.tabvn.com/" target="_blank">Tabvn</a> &copy; 2012. All rights reserved
+settings[perspective_footer_social_links] = <a href="#" class="facebook"></a><a href="#" class="twitter"></a><a href="#" class="pinterest"></a><a href="#" class="vimeo"></a><a href="#" class="youtube"></a><a href="#" class="digg"></a>
+
+settings[default_banners][1][image_path]        = images/assets/1.png
+settings[default_banners][1][image_title]       = Responsive design
+settings[default_banners][1][image_description] = Proiciens te princeps ea complacuit leno caelum pariter.Aliorum naufragium fieri scelus patrem alicui virginis instaret, iuvenis ut libertatem non potentiae quem acceperat utique dolorem in!
+settings[default_banners][1][image_published]   = TRUE
+settings[default_banners][1][image_url]         = <front>
+settings[default_banners][1][image_url_title]   = Get it now
+settings[default_banners][1][image_weight]      = 0
+
+settings[default_banners][2][image_path]        = images/assets/2.png
+settings[default_banners][2][image_title]       = Multiple layouts
+settings[default_banners][2][image_description] = Proiciens te princeps ea complacuit leno caelum pariter.Aliorum naufragium fieri scelus patrem alicui virginis instaret, iuvenis ut libertatem non potentiae quem acceperat utique dolorem in!
+settings[default_banners][2][image_published]   = TRUE
+settings[default_banners][2][image_url]         = <front>
+settings[default_banners][2][image_url_title]   = Get it now
+settings[default_banners][2][image_weight]      = 1
+
+settings[default_banners][3][image_path]        = images/assets/3.png
+settings[default_banners][3][image_title]       = Unlimited skins
+settings[default_banners][3][image_description] = Proiciens te princeps ea complacuit leno caelum pariter.Aliorum naufragium fieri scelus patrem alicui virginis instaret, iuvenis ut libertatem non potentiae quem acceperat utique dolorem in!
+settings[default_banners][3][image_published]   = TRUE
+settings[default_banners][3][image_url]         = <front>
+settings[default_banners][3][image_url_title]   = Get it now
+settings[default_banners][3][image_weight]      = 2
+
+settings[default_banners][4][image_path]        = images/assets/4.png
+settings[default_banners][4][image_title]       = Exclusive on themeforest
+settings[default_banners][4][image_description] = Proiciens te princeps ea complacuit leno caelum pariter.Aliorum naufragium fieri scelus patrem alicui virginis instaret, iuvenis ut libertatem non potentiae quem acceperat utique dolorem in!
+settings[default_banners][4][image_published]   = TRUE
+settings[default_banners][4][image_url]         = <front>
+settings[default_banners][4][image_url_title]  = Get it now
+settings[default_banners][4][image_weight]      = 3

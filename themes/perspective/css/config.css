@@ -1,0 +1,42 @@
+/*Cross-Browser CSS reset*/
+@import url('reset.css');
+
+/*960 Grid System*/
+@import url('grid.css');
+
+/* Lightbox Evolution */
+@import url('../js/lightbox/themes/default/jquery.lightbox.css');
+
+/*FlexSlider*/
+@import url('flexslider.css');
+
+/*iView Slider*/
+@import url('iview-slider/iview.css');
+@import url('iview-slider/style.css');
+
+/* OneByOne Slider */
+@import url('jquery.onebyone.css');
+
+/*SMK Framework - Elements*/
+@import url('framework.css');
+
+/*General styles*/
+@import url('style.css');
+
+/*Responsive styles*/
+@import url('responsive.css');
+
+/*General colors*/
+@import url('themes/40.css');
+
+/* GOOGLE FONTS */
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic);
+
+
+/*
+------------------------------------------------------------------------------------------
+*/
+.home_notice h2,
+.price_box .pb_column .pb_price{
+	font-family: "Droid Serif", Helvetica, Arial, sans-serif;
+}

@@ -1,0 +1,17 @@
+name = custom_client
+description = Add client content type
+core = 7.x
+package = Tabvn
+version = 7.x-1.0
+project = custom_client
+dependencies[] = features
+dependencies[] = field_sql_storage
+dependencies[] = image
+dependencies[] = node
+dependencies[] = text
+features[features_api][] = api:1
+features[field][] = comment-comment_node_client-comment_body
+features[field][] = node-client-body
+features[field][] = node-client-field_logo
+features[field][] = node-client-field_website
+features[node][] = client

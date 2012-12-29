@@ -1,0 +1,50 @@
+name = Serion
+old_short_name = standard
+description = Default installation profile for Serion
+core = 7.x
+theme = solaris
+
+; Core
+
+dependencies[] = block
+dependencies[] = blog
+dependencies[] = color
+dependencies[] = comment
+dependencies[] = contextual_links
+dependencies[] = field_ui
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = overlay
+dependencies[] = rdf
+dependencies[] = taxonomy
+
+; Contrib
+
+dependencies[] = libraries
+dependencies[] = admin_menu
+dependencies[] = better_exposed_filters
+dependencies[] = ctools
+dependencies[] = ds
+dependencies[] = field_group
+dependencies[] = filefield_nginx_progress
+dependencies[] = flexslider
+dependencies[] = jcarousel
+dependencies[] = jquery_update
+dependencies[] = link
+dependencies[] = pathauto
+dependencies[] = site_map
+dependencies[] = panels
+dependencies[] = quicktabs
+dependencies[] = redirect
+dependencies[] = token
+dependencies[] = textformatter
+dependencies[] = token
+dependencies[] = twitter
+dependencies[] = variable
+dependencies[] = views
+dependencies[] = views_slideshow
+dependencies[] = webform
+dependencies[] = wysiwyg
+dependencies[] = xmlsitemap
+

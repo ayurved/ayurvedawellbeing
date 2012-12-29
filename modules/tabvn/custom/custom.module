@@ -1,0 +1,217 @@
+<?php
+
+/**
+ * 
+ * Implememtation of hook_block_info()
+ */
+function custom_block_info() {
+
+
+    $blocks['clients_block'] = array(
+        'info' => t('[Custom] Our clients'),
+            // DRUPAL_CACHE_PER_ROLE will be assumed.
+    );
+
+    $blocks['recent_posts'] = array(
+        'info' => t('[Custom] Recent posts'),
+            // DRUPAL_CACHE_PER_ROLE will be assumed.
+    );
+
+    $blocks['recent_projects'] = array(
+        'info' => t('[Custom] Recent projects'),
+            // DRUPAL_CACHE_PER_ROLE will be assumed.
+    );
+
+
+
+    return $blocks;
+}
+
+/**
+ * 
+ * Implemetation of hook_block_configure()
+ */
+function custom_block_configure($delta = '') {
+    // This example comes from node.module.
+    $form = array();
+
+    switch ($delta) {
+        case 'clients_block':
+
+            $form['clients_block_description'] = array(
+                '#type' => 'textarea',
+                '#title' => t('Description'),
+                '#default_value' => variable_get('clients_block_description', 'change this text in block setting.'),
+            );
+            break;
+
+
+        case 'recent_posts':
+
+            $form['recent_posts_description'] = array(
+                '#type' => 'textarea',
+                '#title' => t('Description'),
+                '#default_value' => variable_get('recent_posts_description', 'change this text in block setting.'),
+            );
+            break;
+        case 'recent_projects':
+
+            $form['recent_projects_description'] = array(
+                '#type' => 'textarea',
+                '#title' => t('Description'),
+                '#default_value' => variable_get('recent_projects_description', 'change this text in block setting.'),
+            );
+            break;
+    }
+    return $form;
+}
+
+/**
+ * 
+ * Implementation of hook_block_save()
+ */
+function custom_block_save($delta = '', $edit = array()) {
+    // This example comes from node.module.
+
+    switch ($delta) {
+        case 'clients_block':
+
+            variable_set('clients_block_description', $edit['clients_block_description']);
+            break;
+        case 'recent_posts':
+
+            variable_set('recent_posts_description', $edit['recent_posts_description']);
+            break;
+        case 'recent_projects':
+
+            variable_set('recent_projects_description', $edit['recent_projects_description']);
+            break;
+    }
+}
+
+/**
+ * 
+ * Implementation of hook_block_view()
+ */
+function custom_block_view($delta = '') {
+    // This example is adapted from node.module.
+    $block = array();
+
+    switch ($delta) {
+
+        case 'clients_block':
+            $node_limit = 14;
+            $content_type = 'client';
+            $query = db_query('SELECT n.nid FROM {node} n WHERE n.type = :type AND n.status = 1 ORDER BY n.created DESC LIMIT 0, ' . $node_limit, array(':type' => $content_type));
+            $nids = $query->fetchCol();
+            $nodes = node_load_multiple($nids);
+
+            //  $block['subject'] = '';
+
+            if (!empty($nodes)) {
+                $block['content'] = array(
+                    '#theme' => 'clients_block',
+                    '#nodes' => $nodes,
+                    '#description' => variable_get('clients_block_description', 'change this text in block setting.'),
+                    '#title' => custom_block_get_title($delta),
+                );
+            }
+
+            break;
+
+
+        case 'recent_posts':
+            $node_limit = 3;
+            $content_type = 'blog';
+            $query = db_query('SELECT n.nid FROM {node} n INNER JOIN {field_data_field_image} f ON f.entity_id = n.nid WHERE n.type = :type AND n.status = 1 ORDER BY n.created DESC LIMIT 0, ' . $node_limit, array(':type' => $content_type));
+            $nids = $query->fetchCol();
+            $nodes = node_load_multiple($nids);
+
+            //  $block['subject'] = '';
+
+            if (!empty($nodes)) {
+                $block['content'] = array(
+                    '#theme' => 'recent_posts',
+                    '#nodes' => $nodes,
+                    '#description' => variable_get('recent_posts_description', 'change this text in block setting.'),
+                    '#title' => custom_block_get_title($delta),
+                );
+            }
+
+            break;
+        case 'recent_projects':
+            $node_limit = 3;
+            $content_type = 'portfolio';
+            $query = db_query('SELECT n.nid FROM {node} n INNER JOIN {field_data_field_image} f ON f.entity_id = n.nid WHERE n.type = :type AND n.status = 1 ORDER BY n.created DESC LIMIT 0, ' . $node_limit, array(':type' => $content_type));
+            $nids = $query->fetchCol();
+            $nodes = node_load_multiple($nids);
+
+            //  $block['subject'] = '';
+
+            if (!empty($nodes)) {
+                $block['content'] = array(
+                    '#theme' => 'recent_projects',
+                    '#nodes' => $nodes,
+                    '#description' => variable_get('recent_projects_description', 'change this text in block setting.'),
+                    '#title' => custom_block_get_title($delta),
+                );
+            }
+
+            break;
+    }
+    return $block;
+}
+
+/**
+ * Implmentation of hook_theme()
+ * 
+ */
+function custom_theme($existing, $type, $theme, $path) {
+    return array(
+        'clients_block' => array(
+            'variables' => array('nodes' => NULL, 'description' => NULL, 'title' => NULL),
+            'template' => 'clients_block',
+        ),
+        'recent_posts' => array(
+            'variables' => array('nodes' => NULL, 'description' => NULL, 'title' => NULL),
+            'template' => 'recent_posts',
+        ),
+        'recent_projects' => array(
+            'variables' => array('nodes' => NULL, 'description' => NULL, 'title' => NULL),
+            'template' => 'recent_projects',
+        ),
+    );
+}
+
+function custom_block_get_title($delta) {
+    $block = db_query('SELECT title FROM {block} WHERE delta = :delta', array(':delta' => $delta))->fetchObject();
+
+    return $block->title ? $block->title : '';
+}
+
+function custom_format_comma_field($field_category, $node, $link = TRUE, $limit = NULL) {
+    $category_arr = array();
+    $category = '';
+    if (!empty($node->{$field_category}[LANGUAGE_NONE])) {
+        foreach ($node->{$field_category}[LANGUAGE_NONE] as $item) {
+            $term = taxonomy_term_load($item['tid']);
+            if ($term) {
+                if ($link) {
+                    $category_arr[] = l($term->name, 'taxonomy/term/' . $item['tid']);
+                } else {
+                    $category_arr[] = $term->name;
+                }
+            }
+
+            if ($limit) {
+                if (count($category_arr) == $limit) {
+                    $category = implode(', ', $category_arr);
+                    return $category;
+                }
+            }
+        }
+    }
+    $category = implode(', ', $category_arr);
+
+    return $category;
+}
