@@ -46,8 +46,6 @@ projects[xmlsitemap][type] = "module"
 ; --------
 ;projects[solaris][type] = "theme"
 ;projects[solaris][version] = 3.2
-projects[omega][type] = "theme"
-projects[omega][version] = 3.1
   
   
 ; Libraries

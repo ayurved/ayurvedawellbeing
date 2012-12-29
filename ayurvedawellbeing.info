@@ -1,8 +1,8 @@
-name = Serion
+name = AyurvedaWellbeing
 old_short_name = standard
-description = Default installation profile for Serion
+description = Default installation profile for AyurvedaWellbeing
 core = 7.x
-theme = solaris
+theme = perspective
 
 ; Core
 
@@ -27,6 +27,7 @@ dependencies[] = better_exposed_filters
 dependencies[] = ctools
 dependencies[] = ds
 dependencies[] = field_group
+dependencies[] = features
 dependencies[] = filefield_nginx_progress
 dependencies[] = flexslider
 dependencies[] = jcarousel
