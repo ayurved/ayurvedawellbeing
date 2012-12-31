@@ -1,3 +1,8 @@
+; To ensure modules etc are downloaded change in profiles/aaayurvedawellbeing
+; and run the following:
+;
+; drush make --no-core --contrib-destination=. ./ayurvedawellbeing.make
+
 core = 7.x
 api = 2
 
@@ -19,6 +24,8 @@ projects[imce_wysiwyg][version] = 1.0
 projects[imce_wysiwyg][type] = "module"
 projects[libraries][version] = 2.0
 projects[libraries][type] = "module"
+projects[mollom][version] = 2.3
+projects[mollom][type] = "module"
 projects[pathauto][version] = 1.2
 projects[pathauto][type] = "module"
 projects[panels][version] = 3.3
