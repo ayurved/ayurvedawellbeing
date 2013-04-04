@@ -46,8 +46,8 @@ projects[webform][version] = 3.18
 projects[webform][type] = "module"
 projects[wysiwyg][version] = 2.2
 projects[wysiwyg][type] = "module"
-projects[xmlsitemap][version] = 2.0-rc2
-projects[xmlsitemap][type] = "module"
+;projects[xmlsitemap][version] = 2.0-rc2
+;projects[xmlsitemap][type] = "module"
 
 
 ; Themes
