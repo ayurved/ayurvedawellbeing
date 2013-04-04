@@ -49,7 +49,6 @@ projects[wysiwyg][type] = "module"
 projects[xmlsitemap][version] = 2.0-rc2
 projects[xmlsitemap][type] = "module"
 
-  
 
 ; Themes
 ; --------
