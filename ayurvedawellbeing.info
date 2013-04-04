@@ -31,5 +31,4 @@ dependencies[] = redirect
 dependencies[] = token
 dependencies[] = views
 dependencies[] = webform
-dependencies[] = wysiwyg
 
