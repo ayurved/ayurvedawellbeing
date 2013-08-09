@@ -9,7 +9,9 @@ api = 2
 ; Contrib
 ; --------
 projects[admin_menu][version] = 3.0-rc4
-projects[admin_menu][type] = "module"
+projects[admin][type] = "module"
+projects[context][version] = 3.0-beta7
+projects[context][type] = "module"
 projects[ctools][version] = 1.3
 projects[ctools][type] = "module"
 projects[features][version] = 1.0
