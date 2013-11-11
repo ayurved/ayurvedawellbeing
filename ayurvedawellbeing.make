@@ -10,7 +10,7 @@ api = 2
 ; --------
 projects[admin_menu][version] = 3.0-rc4
 projects[admin][type] = "module"
-projects[context][version] = 3.0-beta7
+projects[context][version] = 3.1
 projects[context][type] = "module"
 projects[ctools][version] = 1.3
 projects[ctools][type] = "module"
@@ -28,7 +28,7 @@ projects[libraries][version] = 2.0
 projects[libraries][type] = "module"
 projects[metatag][version] = 1.0-beta7
 projects[metatag][type] = "module"
-projects[mollom][version] = 2.7
+projects[mollom][version] = 2.8
 projects[mollom][type] = "module"
 projects[oauth][version] = 3.1
 projects[oauth][type] = "module"
